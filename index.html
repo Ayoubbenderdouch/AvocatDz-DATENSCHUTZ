@@ -3,164 +3,474 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سياسة الخصوصية - محامي الجزائر</title>
+    <title>سياسة الخصوصية - Droit algérien | قانون الجزائر</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
+        :root {
+            --primary-color: #512da8;
+            --primary-light: #8559da;
+            --primary-dark: #140078;
+            --secondary-color: #03a9f4;
+            --secondary-light: #67daff;
+            --secondary-dark: #007ac1;
+            --text-dark: #333333;
+            --text-light: #ffffff;
+            --bg-light: #f8f9fa;
+            --bg-dark: #121212;
+            --success-color: #4caf50;
+            --warning-color: #ff9800;
+        }
+
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f8f9fa;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            background-image: 
+                radial-gradient(circle at 80% 10%, rgba(81, 45, 168, 0.1) 0%, transparent 60%),
+                radial-gradient(circle at 20% 80%, rgba(3, 169, 244, 0.1) 0%, transparent 60%);
+            background-attachment: fixed;
         }
         
         .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0;
             background-color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
         }
         
         header {
             text-align: center;
-            padding: 20px 0;
+            padding: 60px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            z-index: 0;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.08' fill-rule='evenodd'/%3E%3C/svg%3E");
+            z-index: 0;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin-bottom: 20px;
-            background: linear-gradient(135deg, #4a0072, #7026b9);
+        }
+        
+        .app-logo {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #6200ea, #3f51b5);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: white;
-            border-radius: 6px;
+            font-size: 40px;
+            font-weight: bold;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .logo-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%);
+        }
+        
+        .app-name {
+            margin-right: 15px;
+            text-align: right;
         }
         
         h1 {
-            font-size: 28px;
+            font-size: 2.5rem;
             margin: 0;
+            color: var(--text-light);
+            font-weight: 800;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.9);
+            font-weight: 400;
+            margin-bottom: 5px;
+        }
+        
+        .content-wrapper {
+            padding: 40px;
+            position: relative;
+        }
+        
+        .last-update {
+            display: inline-block;
+            background-color: rgba(81, 45, 168, 0.1);
+            color: var(--primary-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            position: relative;
         }
         
         h2 {
-            font-size: 22px;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid #7026b9;
-            color: #4a0072;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary-color), var(--primary-light));
+            border-radius: 3px;
         }
         
         p {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #444;
         }
         
         ul {
             padding-right: 20px;
+            margin-bottom: 20px;
         }
         
         li {
-            margin-bottom: 8px;
+            margin-bottom: 12px;
+            position: relative;
+            padding-right: 25px;
+        }
+        
+        li::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 10px;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-light);
+            border-radius: 50%;
+        }
+        
+        strong {
+            color: var(--primary-dark);
+            font-weight: 700;
+        }
+        
+        .highlight-box {
+            background-color: #f7f9ff;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+            position: relative;
+            border-right: 5px solid var(--primary-color);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .highlight-box.success {
+            background-color: #f1f8e9;
+            border-right-color: var(--success-color);
+        }
+        
+        .highlight-box.success strong {
+            color: var(--success-color);
+        }
+        
+        .contact-box {
+            background: linear-gradient(to bottom right, #e8eaf6, #c5cae9);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%233f51b5' fill-opacity='0.05' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .contact-box h2 {
+            color: var(--primary-dark);
+        }
+        
+        .contact-box a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        
+        .contact-box a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
         }
         
         .footer {
             text-align: center;
-            margin-top: 30px;
-            padding-top: 20px;
+            padding: 30px 0;
+            background-color: #f5f5f5;
+            color: #666;
+            font-size: 0.9rem;
             border-top: 1px solid #eee;
-            color: #777;
-            font-size: 14px;
+            position: relative;
         }
         
-        .highlight {
-            background-color: #f7f4fc;
-            padding: 15px;
-            border-right: 4px solid #7026b9;
-            border-radius: 4px;
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='0.03' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
         }
         
-        .contact {
-            background-color: #f0f5ff;
-            padding: 15px;
-            border-radius: 6px;
-            margin-top: 20px;
+        .section-icon {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-light);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-left: 10px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            top: -2px;
         }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+                border-radius: 15px;
+            }
+            
+            header {
+                padding: 40px 20px;
+            }
+            
+            .content-wrapper {
+                padding: 25px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .app-logo {
+                width: 60px;
+                height: 60px;
+                font-size: 30px;
+            }
+            
+            .highlight-box, .contact-box {
+                padding: 20px;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .section {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+        
+        .section:nth-child(2) { animation-delay: 0.1s; }
+        .section:nth-child(3) { animation-delay: 0.2s; }
+        .section:nth-child(4) { animation-delay: 0.3s; }
+        .section:nth-child(5) { animation-delay: 0.4s; }
+        .section:nth-child(6) { animation-delay: 0.5s; }
+        .section:nth-child(7) { animation-delay: 0.6s; }
+        .section:nth-child(8) { animation-delay: 0.7s; }
+        .section:nth-child(9) { animation-delay: 0.8s; }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>سياسة الخصوصية</h1>
-            <p>تطبيق محامي الجزائر - مساعدك القانوني الشخصي</p>
+            <div class="header-bg"></div>
+            <div class="header-overlay"></div>
+            <div class="header-content">
+                <div class="logo-container">
+                    <div class="app-logo">
+                        <div>ق</div>
+                        <div class="logo-overlay"></div>
+                    </div>
+                    <div class="app-name">
+                        <div class="subtitle">Droit algérien</div>
+                        <h1>قانون الجزائر</h1>
+                    </div>
+                </div>
+                <p class="subtitle">مساعدك القانوني الشخصي</p>
+            </div>
         </header>
         
-        <section>
-            <p>آخر تحديث: 8 مايو 2025</p>
+        <div class="content-wrapper">
+            <div class="last-update">آخر تحديث: 8 مايو 2025</div>
             
-            <p class="highlight">
-                نحن في تطبيق "محامي الجزائر" نقدر خصوصيتك ونلتزم بحماية بياناتك الشخصية. تشرح سياسة الخصوصية هذه كيفية جمع واستخدام وحماية المعلومات التي تقدمها عند استخدام تطبيقنا.
-            </p>
-            
-            <h2>١. المعلومات التي نجمعها</h2>
-            <p>نقوم بجمع المعلومات التالية عند استخدامك للتطبيق:</p>
-            <ul>
-                <li><strong>محتوى المحادثات:</strong> النصوص والاستفسارات التي تقوم بإدخالها في التطبيق للحصول على المعلومات القانونية.</li>
-                <li><strong>الصور المرفوعة:</strong> أي صور أو وثائق تقوم بتحميلها للتحليل القانوني.</li>
-                <li><strong>مفتاح API:</strong> في حالة استخدامك لمفتاح API خاص بك للاتصال بخدمات OpenAI.</li>
-            </ul>
-            
-            <h2>٢. كيفية استخدام المعلومات</h2>
-            <p>نستخدم المعلومات التي نجمعها للأغراض التالية:</p>
-            <ul>
-                <li>تقديم خدمات المساعدة القانونية المطلوبة.</li>
-                <li>تحسين وتطوير خدمات التطبيق.</li>
-                <li>تخزين محفوظات المحادثات الخاصة بك لتتمكن من الرجوع إليها لاحقًا.</li>
-                <li>معالجة الصور والوثائق التي تقوم بتحميلها للحصول على تحليل قانوني.</li>
-            </ul>
-            
-            <h2>٣. تخزين البيانات</h2>
-            <p>تتم معالجة وتخزين بياناتك كما يلي:</p>
-            <ul>
-                <li><strong>التخزين المحلي:</strong> يتم تخزين محفوظات المحادثات محليًا على جهازك باستخدام UserDefaults، ولا يتم مشاركتها مع خوادمنا.</li>
-                <li><strong>مفتاح API:</strong> يتم تخزين مفتاح API الخاص بك محليًا على جهازك فقط ولا يتم مشاركته مع أي طرف ثالث باستثناء OpenAI لتنفيذ الطلبات.</li>
-                <li><strong>معالجة الصور:</strong> عند تحميل صورة للتحليل، يتم إرسالها إلى OpenAI عبر API آمن. لا نقوم بتخزين الصور على خوادمنا.</li>
-            </ul>
-            
-            <h2>٤. مشاركة البيانات مع الأطراف الثالثة</h2>
-            <p>نشارك بياناتك فقط مع الجهات التالية:</p>
-            <ul>
-                <li><strong>OpenAI:</strong> نستخدم خدمات OpenAI لمعالجة استفساراتك وتحليل الصور. تخضع البيانات المرسلة إلى OpenAI لسياسة الخصوصية الخاصة بهم.</li>
-                <li>لا نبيع أو نؤجر معلوماتك الشخصية لأطراف ثالثة لأغراض تسويقية.</li>
-            </ul>
-            
-            <div class="highlight">
-                <p><strong>ملاحظة مهمة:</strong> تطبيقنا يستخدم واجهة برمجة تطبيقات (API) من OpenAI لتوفير الإجابات على الاستفسارات القانونية وتحليل الصور. عندما تستخدم هذه الميزات، قد يتم إرسال نصوصك وصورك إلى خوادم OpenAI للمعالجة. نوصي بعدم مشاركة معلومات سرية للغاية أو بيانات شخصية حساسة.</p>
+            <div class="section">
+                <div class="highlight-box success">
+                    <p><strong>ميزات الذكاء الاصطناعي:</strong> تم تطوير روبوت المحادثة والتحليل القانوني في تطبيق "Droit algérien | قانون الجزائر" بالكامل بواسطة المطور أيوب بن دردوش، وهو يستخدم تقنيات ذكاء اصطناعي متقدمة لتوفير استشارات قانونية دقيقة بالاعتماد على القوانين الجزائرية.</p>
+                </div>
+                
+                <p>نحن في تطبيق "Droit algérien | قانون الجزائر" نقدر خصوصيتك ونلتزم بحماية بياناتك الشخصية. تشرح سياسة الخصوصية هذه كيفية جمع واستخدام وحماية المعلومات التي تقدمها عند استخدام تطبيقنا.</p>
             </div>
             
-            <h2>٥. أمان البيانات</h2>
-            <p>نحن نتخذ تدابير أمنية معقولة لحماية معلوماتك الشخصية من الوصول غير المصرح به أو الإفصاح. ومع ذلك، لا يمكن ضمان أمان البيانات المرسلة عبر الإنترنت بشكل مطلق.</p>
-            
-            <h2>٦. حقوقك</h2>
-            <p>لديك الحقوق التالية فيما يتعلق ببياناتك:</p>
-            <ul>
-                <li>الوصول إلى بياناتك الشخصية المخزنة في التطبيق.</li>
-                <li>مسح محفوظات المحادثات من خلال ميزة "مسح المحادثات" المتوفرة في التطبيق.</li>
-                <li>حذف مفتاح API الخاص بك من التطبيق في أي وقت.</li>
-            </ul>
-            
-            <h2>٧. إخلاء المسؤولية</h2>
-            <p>المعلومات القانونية المقدمة من خلال التطبيق هي معلومات عامة ولا تعتبر استشارة قانونية رسمية. نوصي دائمًا بالرجوع إلى محام مختص للحصول على المشورة القانونية المتعلقة بحالتك الخاصة.</p>
-            
-            <h2>٨. التغييرات على سياسة الخصوصية</h2>
-            <p>قد نقوم بتحديث سياسة الخصوصية هذه من وقت لآخر. سنقوم بإخطارك بأي تغييرات جوهرية من خلال نشر السياسة الجديدة على هذه الصفحة وتحديث تاريخ "آخر تحديث".</p>
-            
-            <div class="contact">
-                <h2>٩. اتصل بنا</h2>
-                <p>إذا كان لديك أي أسئلة أو استفسارات حول سياسة الخصوصية لدينا، يرجى التواصل معنا:</p>
+            <div class="section">
+                <span class="section-icon">١</span>
+                <h2>المعلومات التي نجمعها</h2>
+                <p>نقوم بجمع المعلومات التالية عند استخدامك للتطبيق:</p>
                 <ul>
-                    <li>البريد الإلكتروني: ayoubbenderdouch@gmail.com</li>
-                    <li>موقع المطور: <a href="https://www.instagram.com/ayoub_benderdouch">Ayoub Benderdouch على Instagram</a></li>
+                    <li><strong>محتوى المحادثات:</strong> النصوص والاستفسارات التي تقوم بإدخالها في التطبيق للحصول على المعلومات القانونية.</li>
+                    <li><strong>الصور المرفوعة:</strong> أي صور أو وثائق تقوم بتحميلها للتحليل القانوني.</li>
                 </ul>
             </div>
-        </section>
+            
+            <div class="section">
+                <span class="section-icon">٢</span>
+                <h2>كيفية استخدام المعلومات</h2>
+                <p>نستخدم المعلومات التي نجمعها للأغراض التالية:</p>
+                <ul>
+                    <li>تقديم خدمات المساعدة القانونية المطلوبة.</li>
+                    <li>تحسين وتطوير خدمات التطبيق.</li>
+                    <li>تخزين محفوظات المحادثات الخاصة بك لتتمكن من الرجوع إليها لاحقًا.</li>
+                    <li>معالجة الصور والوثائق التي تقوم بتحميلها للحصول على تحليل قانوني.</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <span class="section-icon">٣</span>
+                <h2>تخزين البيانات</h2>
+                <p>تتم معالجة وتخزين بياناتك كما يلي:</p>
+                <ul>
+                    <li><strong>التخزين المحلي:</strong> يتم تخزين محفوظات المحادثات محليًا على جهازك باستخدام UserDefaults، ولا يتم مشاركتها مع خوادمنا.</li>
+                    <li><strong>معالجة الصور:</strong> عند تحميل صورة للتحليل، تتم معالجتها بواسطة نظام الذكاء الاصطناعي الذي قمنا بتطويره. لا نقوم بتخزين الصور على خوادمنا.</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <span class="section-icon">٤</span>
+                <h2>مشاركة البيانات مع الأطراف الثالثة</h2>
+                <p>نؤكد لك أن:</p>
+                <ul>
+                    <li><strong>لا نشارك بياناتك:</strong> جميع عمليات المعالجة والتحليل تتم ضمن التطبيق باستخدام تقنية الذكاء الاصطناعي التي قمت بتطويرها خصيصًا.</li>
+                    <li><strong>خصوصية تامة:</strong> لا نبيع أو نؤجر معلوماتك الشخصية لأي أطراف ثالثة سواء كان ذلك لأغراض تسويقية أو غيرها.</li>
+                </ul>
+                
+                <div class="highlight-box">
+                    <p><strong>ملاحظة مهمة:</strong> تطبيقنا يستخدم نظام ذكاء اصطناعي متطور تم تطويره بواسطة أيوب بن دردوش لتوفير الإجابات على الاستفسارات القانونية وتحليل الصور. جميع المعالجات تتم محليًا أو على خوادمنا الآمنة. مع ذلك، نوصي دائمًا بعدم مشاركة معلومات سرية للغاية أو بيانات شخصية حساسة.</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <span class="section-icon">٥</span>
+                <h2>أمان البيانات</h2>
+                <p>نحن نتخذ تدابير أمنية معقولة لحماية معلوماتك الشخصية من الوصول غير المصرح به أو الإفصاح. ومع ذلك، لا يمكن ضمان أمان البيانات المرسلة عبر الإنترنت بشكل مطلق.</p>
+            </div>
+            
+            <div class="section">
+                <span class="section-icon">٦</span>
+                <h2>حقوقك</h2>
+                <p>لديك الحقوق التالية فيما يتعلق ببياناتك:</p>
+                <ul>
+                    <li>الوصول إلى بياناتك الشخصية المخزنة في التطبيق.</li>
+                    <li>مسح محفوظات المحادثات من خلال ميزة "مسح المحادثات" المتوفرة في التطبيق.</li>
+                    <li>طلب حذف أي بيانات أخرى عن طريق التواصل معنا.</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <span class="section-icon">٧</span>
+                <h2>إخلاء المسؤولية</h2>
+                <p>المعلومات القانونية المقدمة من خلال التطبيق هي معلومات عامة ولا تعتبر استشارة قانونية رسمية. نوصي دائمًا بالرجوع إلى محام مختص للحصول على المشورة القانونية المتعلقة بحالتك الخاصة.</p>
+            </div>
+            
+            <div class="section">
+                <span class="section-icon">٨</span>
+                <h2>التغييرات على سياسة الخصوصية</h2>
+                <p>قد نقوم بتحديث سياسة الخصوصية هذه من وقت لآخر. سنقوم بإخطارك بأي تغييرات جوهرية من خلال نشر السياسة الجديدة على هذه الصفحة وتحديث تاريخ "آخر تحديث".</p>
+            </div>
+            
+            <div class="section">
+                <div class="contact-box">
+                    <span class="section-icon">٩</span>
+                    <h2>اتصل بنا</h2>
+                    <p>إذا كان لديك أي أسئلة أو استفسارات حول سياسة الخصوصية لدينا، يرجى التواصل معنا:</p>
+                    <ul>
+                        <li>البريد الإلكتروني: <a href="mailto:ayoubbenderdouch@gmail.com">ayoubbenderdouch@gmail.com</a></li>
+                        <li>موقع المطور: <a href="https://www.instagram.com/ayoub_benderdouch">Ayoub Benderdouch على Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
         
         <div class="footer">
-            <p>© 2025 محامي الجزائر - تم التطوير بواسطة أيوب بن دردوش. جميع الحقوق محفوظة.</p>
+            <p>© 2025 Droit algérien | قانون الجزائر - تم التطوير بواسطة أيوب بن دردوش. جميع الحقوق محفوظة.</p>
         </div>
     </div>
 </body>
